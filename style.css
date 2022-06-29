@@ -176,7 +176,10 @@ main img{
     color:#7e8082;
     margin-bottom: 30px;
 }
-
+.open__section img{
+    max-width: 100%;
+    height: auto;
+}
 .more{
     
     text-decoration: none;
@@ -223,4 +226,42 @@ main img{
 .card:hover{
    
     color:#023047;
+}
+section{
+    margin-bottom: 60px;
+}
+footer{
+    
+    width: 100%;
+    background-color: #F1C40F;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+footer img{
+    width: 10em;
+}
+footer h2{
+    font-family: "Poppins",sans-serif;
+    color:#023047;
+}
+footer nav{
+    display:flex;
+    justify-content: center;
+    gap:20px;
+}
+footer nav a{
+    color:#fff;
+    font-size:40px;
+    text-decoration: none;
+}
+.facebook:hover{
+    color:#3b5998;
+}
+.instagram:hover{
+    color:#FF0080;
+}
+
+.linkedin:hover{
+    color:#0077B5;
 }
