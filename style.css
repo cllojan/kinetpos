@@ -18,14 +18,21 @@ header.abajo{
 }
 .wrapper {
 	width:90%; /* Establecemos que el ancho sera del 90% */
-	max-width:1000px; /* Aqui le decimos que el ancho máximo sera de 1000px */
+	max-width:992px; /* Aqui le decimos que el ancho máximo sera de 1000px */
 	margin:auto; /* Centramos los elementos */
 	overflow:hidden; /* Eliminamos errores de float */
     display:flex;
     align-items: center;
     justify-content: space-between;
 }
-
+.toggle{
+    border:none;
+    background-color: transparent;
+    color:#fff;
+    font-size:30px;
+    line-height:60px;
+    display:none;
+}
 header .logo {
 	color:#f2f2f2;
     width: 2em;
@@ -54,7 +61,7 @@ header nav a {
 	transition:all 500ms ease;*/
 }
 
-header nav a:hover {
+.suscribete {
 	background:#f56f3a;
 	border-radius:50px;
 }
@@ -76,11 +83,10 @@ main img{
     color:#fff;
     font-family: "Poppins",sans-serif;
     position:absolute;
-    top:30%;
-    left:10%;
-    right:10%;
-    bottom:0;
-    margin:auto;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    
    
 }
 
@@ -195,22 +201,27 @@ main img{
     display:flex;
     flex-direction: column;
     align-items: center;
+    
 }
 .section__herramientas h1{
+    
     font-size:34px;
     color:#023047;
     margin: 80px;
 }
 .herramientas{
+    margin:20px;
     display:grid;
-    grid-template-columns: repeat(4, 250px);
+    grid-template-columns: repeat(4, 1fr);
     gap:30px;
     text-align: center;
 }
 .card{
+    margin:10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    
 }
 .card i{
     font-size: 30px;
@@ -235,6 +246,7 @@ footer{
     width: 100%;
     background-color: #F1C40F;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
 }
@@ -264,4 +276,84 @@ footer nav a{
 
 .linkedin:hover{
     color:#0077B5;
+}
+
+@media (max-width:1200px){
+    .herramientas{
+        grid-template-columns: repeat(3,1fr);
+    }
+    .info img{
+        width:20em;
+    }
+    .info__description{
+        width:20em;
+    }
+}
+@media (max-width:990px){
+    
+    .herramientas{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .info{
+        justify-content: center;
+        flex-wrap:wrap;
+    }
+    .info:nth-child(3){
+        flex-wrap: wrap-reverse;
+    }
+}
+
+@media (max-width:760px){
+    header{
+        background-color:#023047;
+    }
+    .wrapper{
+        height:60px;
+        
+    }
+    .menu{
+        padding:30px 0;
+        position:fixed;
+        flex-direction: column;
+        gap:40px;
+        background-color: #023047;
+        left:100%;
+        top:60px;
+        width: 100%;
+        height: calc(100% - 60px);
+        overflow-y: auto;
+        transition: left .5s;
+    }
+    .toggle{
+        cursor:pointer;
+        display: block;
+    }
+    .visible{
+        left:0;
+    }
+}
+@media (max-width:600px){
+   
+    .cont-main h2{
+        font-size:1.3em;
+    }
+    .cont-main h2 span{
+        font-size:0.8em;
+    }
+    .cont-main a{
+        font-size:1em;
+    }
+    .section__herramientas h1{
+        font-size: 1.5em;
+    }
+    
+    .herramientas{
+        grid-template-columns: repeat(1,1fr);
+    }
+    footer{
+        flex-direction: column;
+    }
+    footer nav{
+        margin-bottom: 20px;
+    }
 }
